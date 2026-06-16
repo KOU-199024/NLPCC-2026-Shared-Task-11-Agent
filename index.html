@@ -3,518 +3,845 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
-  <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
+  <meta name="title" content="NLPCC 2026 Shared Task 11: Agent-Based Experiment Reproduction from Scientific Papers">
+  <meta name="description" content="NLPCC 2026 Shared Task 11 evaluates LLM-based agents' ability to reconstruct experimental pipelines from research papers across 7 scientific domains with 150 papers.">
+  <meta name="keywords" content="NLPCC 2026, shared task, experiment reproduction, LLM agents, scientific papers, MCP, action recorder, NLP">
+  <meta name="author" content="NLPCC 2026 Shared Task 11 Organizers">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-  <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta property="og:site_name" content="NLPCC 2026 Shared Task 11">
+  <meta property="og:title" content="NLPCC 2026 Shared Task 11: Agent-Based Experiment Reproduction from Scientific Papers">
+  <meta property="og:description" content="Evaluating LLM-based agents' ability to reproduce experimental pipelines from research papers across 7 scientific domains.">
+  <meta property="og:url" content="https://kou-199024.github.io/NLPCC-2026-Shared-Task-11">
+  <meta property="og:image" content="https://kou-199024.github.io/NLPCC-2026-Shared-Task-11/static/images/social_preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="article:published_time" content="2026-01-01T00:00:00.000Z">
   <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
+  <meta property="article:tag" content="NLP">
+  <meta property="article:tag" content="LLM Agents">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
-
-  <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
   <!-- Additional SEO -->
   <meta name="theme-color" content="#2563eb">
   <meta name="msapplication-TileColor" content="#2563eb">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
+
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
+  <title>NLPCC 2026 Shared Task 11: Agent-Based Experiment Reproduction</title>
 
-  <!-- TODO: Replace with your paper title and authors -->
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
-  
   <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
+
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
+
   <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
+
   <!-- Fallback for browsers that don't support preload -->
   <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
-  
+
   <!-- Fonts - Optimized loading -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
-  
-  <!-- Structured Data for Academic Papers -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
-    "author": [
-      {
-        "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      }
-    ],
-    "datePublished": "2024-01-01",
-    "publisher": {
-      "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
-    },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
-    "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
-      },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
-      }
-    ]
-  }
-  </script>
-  
-  <!-- Website/Organization Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
-    ]
-  }
-  </script>
+
+  <style>
+    .task-tag {
+      display: inline-block;
+      background: #e8f4fd;
+      color: #1a6fa8;
+      border: 1px solid #bde0f7;
+      border-radius: 4px;
+      padding: 2px 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .stat-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .stat-card .stat-number {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #2563eb;
+      line-height: 1;
+    }
+    .stat-card .stat-label {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-top: 0.4rem;
+    }
+    .rubric-badge {
+      display: inline-block;
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .badge-obs   { background:#dbeafe; color:#1e40af; }
+    .badge-plan  { background:#ede9fe; color:#5b21b6; }
+    .badge-code  { background:#d1fae5; color:#065f46; }
+    .badge-exec  { background:#fef3c7; color:#92400e; }
+    .badge-res   { background:#fee2e2; color:#991b1b; }
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .timeline-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #2563eb;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    .timeline-dot.done { background: #10b981; }
+    .timeline-dot.upcoming { background: #f59e0b; }
+    .code-block {
+      background: #1e293b;
+      color: #e2e8f0;
+      border-radius: 8px;
+      padding: 1.2rem 1.4rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .code-block .comment { color: #94a3b8; }
+    .section-anchor { scroll-margin-top: 60px; }
+    .nav-pill {
+      display: inline-block;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #374151;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .nav-pill:hover { background: #f3f4f6; color: #2563eb; }
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.5rem 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.25rem;
+      flex-wrap: wrap;
+    }
+    table.dataset-table th, table.dataset-table td {
+      vertical-align: middle;
+    }
+    table.dataset-table tr.table-total td {
+      background: #e8f0fe;
+      font-weight: 700;
+      color: #1e40af;
+      border-top: 2px solid #bfdbfe;
+    }
+    .domain-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    .tool-card {
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 1rem;
+    }
+    .tool-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #1e293b;
+    }
+    .tool-card p {
+      font-size: 0.9rem;
+      color: #4b5563;
+      margin: 0;
+    }
+    .organizer-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+    }
+    .organizer-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg,#2563eb,#7c3aed);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+  </style>
 </head>
 <body>
-
 
   <!-- Scroll to Top Button -->
   <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
+  <!-- Sticky Navigation -->
+  <nav class="sticky-nav" aria-label="Page sections">
+    <a href="#overview"    class="nav-pill">Overview</a>
+    <a href="#dataset"     class="nav-pill">Dataset</a>
+    <a href="#evaluation"  class="nav-pill">Evaluation</a>
+    <a href="#tools"         class="nav-pill">Tools</a>
+    <a href="#registration" class="nav-pill">Registration</a>
+    <a href="#submission"   class="nav-pill">Submission</a>
+    <!-- <a href="#dates"       class="nav-pill">Dates</a> -->
+    <a href="#organizers"  class="nav-pill">Organizers</a>
+  </nav>
 
   <main id="main-content">
+
+  <!-- ===== HERO ===== -->
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+            <p style="margin-bottom:0.6rem;">
+              <span class="task-tag">NLPCC 2026 &nbsp;·&nbsp; Shared Task 11</span>
+            </p>
+            <h1 class="title is-2 publication-title">
+              Agent-Based Experiment Reproduction<br>from Scientific Papers
+            </h1>
+            <div class="is-size-5 publication-authors" style="margin-top:0.8rem;">
+              <span class="author-block" style="color:#4b5563;">
+                NLPCC 2026 &nbsp;&mdash;&nbsp; Shared Task 11
+              </span>
+            </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+            <div class="column has-text-centered" style="margin-top:1.4rem;">
+              <div class="publication-links">
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
+                <!-- GitHub -->
+                <span class="link-block">
+                  <a href="https://github.com/KOU-199024/NLPCC-2026-Shared-Task-11" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>GitHub</span>
                   </a>
                 </span>
 
-                <!-- TODO: Update with your arXiv paper ID -->
+                <!-- Proposal PDF -->
+                <!-- <span class="link-block">
+                  <a href="_NLPCC_2026__Agent_Experimentation_Proposal.pdf" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Proposal</span>
+                  </a>
+                </span> -->
+
+                <!-- NLPCC Site -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
+                  <a href="http://tcci.ccf.org.cn/conference/2026/shared-tasks/" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-globe"></i></span>
+                    <span>NLPCC 2026</span>
+                  </a>
+                </span>
+
+                <!-- Data -->
+                <span class="link-block">
+                  <a href="https://github.com/KOU-199024/NLPCC-2026-Shared-Task-11/tree/main/data" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-database"></i></span>
+                    <span>Data</span>
+                  </a>
+                </span>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STAT BANNER ===== -->
+  <section style="background:#f8fafc; border-top:1px solid #e5e7eb; border-bottom:1px solid #e5e7eb; padding:2rem 1rem;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered is-variable is-4">
+        <div class="column is-3">
+          <div class="stat-card">
+            <div class="stat-number">150</div>
+            <div class="stat-label">Total Papers</div>
+          </div>
+        </div>
+        <div class="column is-3">
+          <div class="stat-card">
+            <div class="stat-number">7</div>
+            <div class="stat-label">Scientific Domains</div>
+          </div>
+        </div>
+        <div class="column is-3">
+          <div class="stat-card">
+            <div class="stat-number">~70</div>
+            <div class="stat-label">Avg. Rubric Items / Paper</div>
+          </div>
+        </div>
+        <!-- <div class="column is-3">
+          <div class="stat-card">
+            <div class="stat-number">813</div>
+            <div class="stat-label">Total Rubric Items</div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TASK OVERVIEW ===== -->
+  <section class="section hero is-light section-anchor" id="overview">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Task Overview</h2>
+          <div class="content has-text-justified" style="font-size:1.05rem; line-height:1.75;">
+            <p>
+              As LLM-based AI systems become increasingly integral to scientific workflows, they provide
+              substantial support across multiple stages of research. However, <strong>experiment reproduction</strong>
+              remains a significant challenge for current AI agents.
+            </p>
+            <p>
+              This shared task evaluates agents' ability to <strong>reconstruct experimental pipelines from
+              research papers</strong> by interpreting text, planning implementations, generating code, and
+              executing experiments within a controlled environment. Unlike prior work that focuses only on
+              final outputs, this task emphasizes the <strong>full reproduction process</strong> through
+              fine-grained action logs and predefined rubrics covering key stages such as paper understanding,
+              planning, coding, and execution.
+            </p>
+            <p>
+              For each paper in the dataset, both <strong>PDF and Markdown formats</strong> are provided.
+              Participating systems must read the given paper and reproduce the codebase for experiment
+              reproduction. During this process, the system must use the tools provided by the
+              <strong>MCP Action Recorder</strong> to log all actions. Participants submit the action log
+              along with the corresponding repository for evaluation against a series of rubrics covering
+              criteria at each stage of the reproduction pipeline.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DATASET ===== -->
+  <section class="section section-anchor" id="dataset">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Dataset</h2>
+
+      <div class="content" style="margin-bottom:1.5rem; font-size:1rem; line-height:1.7;">
+        <p>
+          The dataset comprises <strong>150 papers</strong> from 7 scientific domains, split into
+          a training / validation set (with ground-truth rubrics) and a held-out test set
+          (rubrics not released). Each paper entry contains a <code>paper.pdf</code>,
+          <code>paper.md</code>, and an <code>images/</code> folder.
+        </p>
+      </div>
+
+      <!-- Summary table -->
+      <div class="table-container">
+        <table class="table is-fullwidth is-hoverable dataset-table has-text-centered">
+          <thead>
+            <tr>
+              <th class="has-text-left">Domain Group</th>
+              <th>Train / Valid</th>
+              <th>Test</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="has-text-left"><strong>Machine Learning</strong></td>
+              <td>10</td>
+              <td>110</td>
+              <td>120</td>
+            </tr>
+            <tr>
+              <td class="has-text-left"><strong>Other Domains</strong></td>
+              <td>2</td>
+              <td>28</td>
+              <td>30</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="table-total">
+              <td class="has-text-left"><strong>Total</strong></td>
+              <td><strong>12</strong></td>
+              <td><strong>138</strong></td>
+              <td><strong>150</strong></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <!-- Per-domain breakdown -->
+      <h3 class="title is-5" style="margin-top:2rem;">Domain Breakdown</h3>
+      <div class="tags" style="gap:0.5rem;">
+        <span class="tag is-medium">Machine Learning</span>
+        <span class="tag is-medium">Astronomy</span>
+        <span class="tag is-medium">Biology</span>
+        <span class="tag is-medium">Chemistry</span>
+        <span class="tag is-medium">Environment</span>
+        <span class="tag is-medium">Materials</span>
+        <span class="tag is-medium">Medical</span>
+      </div>
+
+      <!-- Training/Validation note -->
+      <div class="notification is-info is-light" style="margin-top:1.5rem;">
+        <strong>Training &amp; Validation Set:</strong> The ground-truth <code>rubrics.json</code> is
+        released alongside each paper in <code>data/train_valid/</code> so that participants can
+        examine their agent system's results and adjust accordingly.
+      </div>
+
+      <!-- Test note -->
+      <div class="notification is-warning is-light">
+        <strong>Test Set:</strong> Rubrics for test papers are withheld. Participants submit their
+        reproduced repositories and action logs; scores are computed by the organizers and released
+        after the evaluation deadline.
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EVALUATION ===== -->
+  <section class="section hero is-light section-anchor" id="evaluation">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Evaluation</h2>
+
+      <div class="content" style="font-size:1rem; line-height:1.7; margin-bottom:1.5rem;">
+        <p>
+          Each paper is paired with a set of rubric entries in <code>rubrics.json</code>. Each entry
+          specifies a criterion, a score weight, and one of five evaluation types that together cover
+          the full reproduction pipeline. Scores are weighted by the <code>score</code> field; the
+          total score is normalized to 100.
+        </p>
+      </div>
+
+      <!-- Rubric JSON example -->
+      <h3 class="title is-5">Rubric Entry Format</h3>
+      <div class="code-block">
+{<br>
+&nbsp;&nbsp;<span style="color:#93c5fd;">"criteria"</span>: <span style="color:#86efac;">"A description of what the agent is expected to accomplish."</span>,<br>
+&nbsp;&nbsp;<span style="color:#93c5fd;">"score"</span>:    <span style="color:#fdba74;">3</span>,<br>
+&nbsp;&nbsp;<span style="color:#93c5fd;">"type"</span>:     <span style="color:#86efac;">"Code Implementation"</span>,<br>
+&nbsp;&nbsp;<span style="color:#93c5fd;">"comment"</span>:  <span style="color:#86efac;">"Section X, Table X, ..."</span>
+}
+      </div>
+
+      <!-- Evaluation types table -->
+      <h3 class="title is-5" style="margin-top:2rem;">Agent Action Types</h3>
+      <div class="table-container">
+        <table class="table is-fullwidth is-striped is-hoverable">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="rubric-badge badge-obs">Paper Observation</span>
+              </td>
+              <td>The agent has correctly read and understood the relevant sections of the paper.</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="rubric-badge badge-plan">Plan Writing</span>
+              </td>
+              <td>The agent has formulated a plan that covers the necessary components for reproduction.</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="rubric-badge badge-code">Code Implementation</span>
+              </td>
+              <td>The agent has written code that correctly implements the required functionality.</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="rubric-badge badge-exec">Command Execution</span>
+              </td>
+              <td>The agent has successfully executed the implemented code without errors.</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="rubric-badge badge-res">Result Matching</span>
+              </td>
+              <td>The agent's execution outcomes are consistent with the results reported in the paper.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TOOLS ===== -->
+  <section class="section section-anchor" id="tools">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">MCP Action Recorder</h2>
+
+      <div class="content" style="font-size:1rem; line-height:1.7; margin-bottom:1.5rem;">
+        <p>
+          All agent actions during a reproduction run must be routed through the
+          <strong>MCP Action Recorder</strong> — an MCP server that provides agents with real file and
+          shell tools while recording every action into a chronological JSON log. This log is a core
+          part of the evaluation.
+        </p>
+      </div>
+
+      <!-- Tool cards -->
+      <div class="columns is-multiline">
+        <div class="column is-6">
+          <div class="tool-card">
+            <h4><code>read_file</code></h4>
+            <p>Read a file from the workspace. Supports optional line-range offsets
+            (<code>start_offset</code>, <code>end_offset</code>).</p>
+          </div>
+        </div>
+        <div class="column is-6">
+          <div class="tool-card">
+            <h4><code>write_file</code></h4>
+            <p>Write content to a file in the workspace. Parent directories are created
+            automatically if they do not exist.</p>
+          </div>
+        </div>
+        <div class="column is-6">
+          <div class="tool-card">
+            <h4><code>execute_cmd</code></h4>
+            <p>Execute a bash command. Runs with <code>cwd</code> set to the working directory.
+            <em>Read/Write operations are restricted to <code>--work-dir</code>.</em></p>
+          </div>
+        </div>
+        <div class="column is-6">
+          <div class="tool-card">
+            <h4><code>export_log</code></h4>
+            <p>Export the action log to <code>log/actions.json</code>. Also exported automatically
+            on server shutdown.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Start -->
+      <h3 class="title is-5" style="margin-top:2rem;">Quick Start</h3>
+      <p style="font-size:0.95rem; margin-bottom:0.5rem;">Run the MCP server with <code>uvx</code> (recommended):</p>
+      <div class="code-block">
+uvx --from tools mcp-action-recorder --work-dir /path/to/workspace
+      </div>
+
+      <p style="font-size:0.95rem; margin-bottom:0.5rem; margin-top:1rem;">Or install manually:</p>
+      <div class="code-block">
+pip install mcp<br>
+python tools/record_tools.py --work-dir /path/to/workspace
+      </div>
+
+      <!-- MCP config -->
+      <h3 class="title is-5" style="margin-top:2rem;">MCP Configuration for Claude Code</h3>
+      <p style="font-size:0.95rem; margin-bottom:0.5rem;">Add to <code>.mcp.json</code> in your workspace root:</p>
+      <div class="code-block">
+{<br>
+&nbsp;&nbsp;<span style="color:#93c5fd;">"mcpServers"</span>: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#93c5fd;">"action-recorder"</span>: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#93c5fd;">"command"</span>: <span style="color:#86efac;">"uvx"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#93c5fd;">"args"</span>: [<span style="color:#86efac;">"mcp-action-recorder"</span>, <span style="color:#86efac;">"--work-dir"</span>, <span style="color:#86efac;">"./"</span>]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br>
+}
+      </div>
+
+      <p style="font-size:0.95rem; margin-top:1rem; margin-bottom:0.5rem;">
+        To ensure all actions are recorded, restrict built-in tools via
+        <code>.claude/settings.local.json</code>:
+      </p>
+      <div class="code-block">
+{<br>
+&nbsp;&nbsp;<span style="color:#93c5fd;">"permissions"</span>: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#93c5fd;">"allow"</span>: [<span style="color:#86efac;">"mcp__action-recorder"</span>],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#93c5fd;">"deny"</span>:  [<span style="color:#86efac;">"Read"</span>, <span style="color:#86efac;">"Edit"</span>, <span style="color:#86efac;">"Write"</span>, <span style="color:#86efac;">"Bash"</span>]<br>
+&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;<span style="color:#93c5fd;">"enabledMcpjsonServers"</span>: [<span style="color:#86efac;">"action-recorder"</span>]<br>
+}
+      </div>
+
+      <div class="notification is-info is-light" style="margin-top:1.5rem;">
+        See the
+        <a href="https://github.com/KOU-199024/NLPCC-2026-Shared-Task-11/tree/main/example_repo" target="_blank">
+          <code>example_repo/</code>
+        </a>
+        directory on GitHub for a complete reference setup including sample <code>actions.json</code>
+        output.
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REGISTRATION ===== -->
+  <section class="section section-anchor" id="registration">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Registration</h2>
+
+      <div class="content" style="font-size:1rem; line-height:1.7; margin-bottom:1.5rem;">
+        <p>
+          To register for the shared task, please download and fill out
+          the registration form and email it to the registration email. Registration
+          information is also listed on the official
+          <a href="http://tcci.ccf.org.cn/conference/2026/shared-tasks/" target="_blank">
+            NLPCC 2026 Shared Tasks page
+          </a>.
+        </p>
+      </div>
+
+      <div class="columns is-centered" style="margin-top:1.5rem;">
+        <div class="column is-narrow">
+          <a href="RegistrationForm-Task11.doc" download
+             class="button is-medium is-rounded is-link is-light">
+            <span class="icon"><i class="fas fa-file-word"></i></span>
+            <span>Registration Form</span>
+          </a>
+        </div>
+        <div class="column is-narrow">
+          <a href="mailto:hanhua.hong@postgrad.manchester.ac.uk?subject=NLPCC%202026%20Shared%20Task%2011%20Registration"
+             class="button is-medium is-rounded is-info is-light">
+            <span class="icon"><i class="fas fa-envelope"></i></span>
+            <span>Registration Email</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="notification is-warning is-light" style="margin-top:1.5rem;">
+        <strong>How to register:</strong> Download the form above, complete all fields, and send it
+        as an attachment to
+        <a href="mailto:hanhua.hong@postgrad.manchester.ac.uk">hanhua.hong@postgrad.manchester.ac.uk</a>.
+        Each participating team only needs to register once.
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SUBMISSION ===== -->
+  <section class="section hero is-light section-anchor" id="submission">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Submission</h2>
+
+      <div class="content" style="font-size:1rem; line-height:1.7; margin-bottom:1.5rem;">
+        <p>
+          Your submission should contain the <strong>reproduced repositories</strong> for each paper in
+          the test set along with their <strong>action logs</strong>. The directory name for each
+          repository must exactly match the subdirectory name in <code>data/test/</code>, and the action
+          log must be saved to <code>log/actions.json</code> under that repository.
+        </p>
+        <p>
+          Package everything as a single zip file named
+          <code>&lt;your_team_id&gt;.zip</code> and send it to
+          <a href="mailto:hanhua.hong@postgrad.manchester.ac.uk">hanhua.hong@postgrad.manchester.ac.uk</a>
+          by <strong>21 June 2026</strong>. You may submit multiple times; only the last submission
+          will be scored. All the scores will be released together after the evaluation release date.
+        </p>
+      </div>
+
+      <!-- Submission format -->
+      <h3 class="title is-5">Submission Format</h3>
+      <div class="code-block">
+your_team_id.zip<br>
+│<br>
+├─ paper_1/<br>
+│&nbsp;&nbsp;├─ log/<br>
+│&nbsp;&nbsp;│&nbsp;&nbsp;└─ actions.json<br>
+│&nbsp;&nbsp;└─ &lt;reproduced source files&gt;<br>
+│<br>
+├─ paper_2/<br>
+│&nbsp;&nbsp;├─ log/<br>
+│&nbsp;&nbsp;│&nbsp;&nbsp;└─ actions.json<br>
+│&nbsp;&nbsp;└─ &lt;reproduced source files&gt;<br>
+│<br>
+└─ ...
+      </div>
+
+      <div class="notification is-warning is-light" style="margin-top:1.5rem;">
+        <strong>Important:</strong> Each repository directory name must exactly match the corresponding
+        subdirectory name under <code>data/test/&lt;domain&gt;/</code>. Submissions with mismatched
+        names cannot be evaluated.
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== IMPORTANT DATES ===== -->
+  <!-- <section class="section section-anchor" id="dates">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Important Dates</h2>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="timeline-item">
+            <div class="timeline-dot done"></div>
+            <div>
+              <strong>Training &amp; validation data release</strong><br>
+              <span style="color:#6b7280; font-size:0.9rem;">Updated 11 June 2026 — available in <code>data/train_valid/</code></span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot done"></div>
+            <div>
+              <strong>Test data release</strong><br>
+              <span style="color:#6b7280; font-size:0.9rem;">Available in <code>data/test/</code></span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot upcoming"></div>
+            <div>
+              <strong>Submission deadline</strong><br>
+              <span style="color:#6b7280; font-size:0.9rem;">21 June 2026 — send to
+                <a href="mailto:hanhua.hong@postgrad.manchester.ac.uk">hanhua.hong@postgrad.manchester.ac.uk</a>
               </span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:#d1d5db;"></div>
+            <div>
+              <strong>Score release</strong><br>
+              <span style="color:#6b7280; font-size:0.9rem;">All team scores released together after the evaluation deadline</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:#d1d5db;"></div>
+            <div>
+              <strong>NLPCC 2026 Conference</strong><br>
+              <span style="color:#6b7280; font-size:0.9rem;">TBD</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section> -->
 
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
+  <!-- ===== ORGANIZERS ===== -->
+  <section class="section hero is-light section-anchor" id="organizers">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Organizers</h2>
+      <div class="columns is-multiline" style="margin-top:1rem;">
+        <div class="column is-half">
+          <div class="organizer-card">
+            <div class="organizer-avatar">HH</div>
+            <div>
+              <strong>Hanhua Hong</strong><br>
+              <span style="color:#6b7280; font-size:0.9rem;">The University of Manchester</span><br>
+              <a href="mailto:hanhua.hong@postgrad.manchester.ac.uk" style="font-size:0.9rem;">
+                hanhua.hong@postgrad.manchester.ac.uk
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
-
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="column is-half">
+          <div class="organizer-card">
+            <div class="organizer-avatar">YL</div>
+            <div>
+              <strong>Yizhi Li</strong><br>
+              <span style="color:#6b7280; font-size:0.9rem;">The University of Manchester</span>
+            </div>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="organizer-card">
+            <div class="organizer-avatar">JY</div>
+            <div>
+              <strong>Jian Yang</strong><br>
+              <span style="color:#6b7280; font-size:0.9rem;">Beihang University</span>
+            </div>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="organizer-card">
+            <div class="organizer-avatar">MZ</div>
+            <div>
+              <strong>Ming Zhou</strong><br>
+              <span style="color:#6b7280; font-size:0.9rem;">Langboat</span>
+            </div>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="organizer-card">
+            <div class="organizer-avatar">CL</div>
+            <div>
+              <strong>Chenghua Lin</strong><br>
+              <span style="color:#6b7280; font-size:0.9rem;">The University of Manchester</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
   </section>
-<!--End paper poster -->
 
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
-}</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
-
+  </main>
 
   <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <p>
+              This page was built using the
+              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">
+                Academic Project Page Template
+              </a>.
+              This website is licensed under a
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+                Creative Commons Attribution-ShareAlike 4.0 International License
+              </a>.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+</body>
+</html>

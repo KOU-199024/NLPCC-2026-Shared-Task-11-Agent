@@ -676,10 +676,11 @@ python tools/record_tools.py --work-dir /path/to/workspace
       <div class="content" style="font-size:1rem; line-height:1.7; margin-bottom:1.5rem;">
         <p>
           Your submission should contain the <strong>reproduced repositories</strong> for each paper in
-          the test set along with their <strong>action logs</strong>. The directory name for each
-          repository must exactly match the subdirectory name in <code>data/test/</code>, and the action
-          log must be saved to <code>log/actions.json</code> under that repository. In addition, a brief 
-          description of your system should also be included.
+          the test set along with their <strong>action logs</strong>. The directory structure must
+          exactly match the two-layer <code>domain/paper_name</code> layout provided in
+          <code>data/test/</code>, and the action log must be saved to <code>log/actions.json</code>
+          under each paper repository. In addition, a brief description of your system should be
+          included as a <code>README.md</code> file.
         </p>
         <p>
           Package everything as a single zip file named
@@ -695,23 +696,32 @@ python tools/record_tools.py --work-dir /path/to/workspace
       <div class="code-block">
 your_team_id.zip<br>
 │<br>
-├─ paper_1/<br>
-│&nbsp;&nbsp;├─ log/<br>
-│&nbsp;&nbsp;│&nbsp;&nbsp;└─ actions.json<br>
-│&nbsp;&nbsp;└─ &lt;reproduced source files&gt;<br>
+├─ domain_1/<br>
+│&nbsp;&nbsp;├─ paper_1/<br>
+│&nbsp;&nbsp;│&nbsp;&nbsp;├─ log/<br>
+│&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;└─ actions.json<br>
+│&nbsp;&nbsp;│&nbsp;&nbsp;└─ &lt;reproduced source files&gt;<br>
+│&nbsp;&nbsp;│<br>
+│&nbsp;&nbsp;└─ paper_2/<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─ log/<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;└─ actions.json<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ &lt;reproduced source files&gt;<br>
 │<br>
-├─ paper_2/<br>
-│&nbsp;&nbsp;├─ log/<br>
-│&nbsp;&nbsp;│&nbsp;&nbsp;└─ actions.json<br>
-│&nbsp;&nbsp;└─ &lt;reproduced source files&gt;<br>
+├─ domain_2/<br>
+│&nbsp;&nbsp;└─ paper_3/<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─ log/<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;└─ actions.json<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ &lt;reproduced source files&gt;<br>
 │<br>
-└─ ...
+├─ ...<br>
+│<br>
+└─ README.md
       </div>
 
       <div class="notification is-warning is-light" style="margin-top:1.5rem;">
-        <strong>Important:</strong> Each repository directory name must exactly match the corresponding
-        subdirectory name under <code>data/test/&lt;domain&gt;/</code>. Submissions with mismatched
-        names cannot be evaluated.
+        <strong>Important:</strong> The directory structure must exactly match the two-layer
+        <code>domain/paper_name</code> layout in <code>data/test/</code>. Submissions with
+        mismatched names or a missing domain layer cannot be evaluated.
       </div>
     </div>
   </section>
